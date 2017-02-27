@@ -180,5 +180,11 @@ namespace HttpClientTestCore.Controllers
         {
             return Ok(new[] {"X Art", "X Art", "X Art", "X Art", "X Art", "X Art", "X Art"});
         }
+
+        protected override void Dispose(bool disposing)
+        {
+            base.Dispose(disposing);
+            _efContext?.Dispose();
+        }
     }
 }
