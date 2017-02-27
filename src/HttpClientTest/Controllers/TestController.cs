@@ -131,7 +131,8 @@ namespace HttpClientTestCore.Controllers
             }
             catch (Exception ex)
             {
-                return BadRequest(ex.Message);
+                var message = $"Message:{ex.Message} \n $InnerMessage: {ex.InnerException.Message}";
+                return BadRequest(message);
             }
         }
 
